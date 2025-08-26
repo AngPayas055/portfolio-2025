@@ -12,7 +12,7 @@ export default function DialogueBox({ children }: { children: React.ReactNode })
   }, []);
 
   return (
-    <div className="border-4 border-black bg-white p-4 w-full max-w-md text-sm leading-relaxed relative">
+    <div className="border-4 border-black bg-white p-3 w-full max-w-md text-sm leading-relaxed relative">
       {children}
       <span className="absolute bottom-2 right-3">
         {showArrow ? "▶" : ""}

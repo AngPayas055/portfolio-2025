@@ -4,8 +4,8 @@ import DialogueBox from "../ui/DialogueBox";
 
 export default function Intro() {
   return (  
-    <div className="p-3">   
-      <div className="flex flex-col items-center justify-center min-h-screen bg-[#f8f4d8] text-[#000000]">
+    <div>   
+      <div className="flex flex-col items-center justify-center bg-[#f8f4d8] text-[#000000]">
         <Image
           src="/ash_retro.png"
           alt="Ash Avatar"

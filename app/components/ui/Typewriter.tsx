@@ -31,7 +31,6 @@ export default function Typewriter({
       }
 
       if (React.isValidElement(child)) {
-        // ✅ Replace `any` with `unknown`
         const element = child as ReactElement<Record<string, unknown>, string | JSXElementConstructor<unknown>>;
 
         if (element.type === "br") {
