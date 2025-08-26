@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { useState, useEffect, ReactNode } from "react";
+import React, { useState, useEffect, ReactNode, ReactElement } from "react";
 
 export default function Typewriter({
   children,
@@ -12,23 +11,21 @@ export default function Typewriter({
   const [displayed, setDisplayed] = useState<ReactNode[]>([]);
 
   useEffect(() => {
-    // Flatten children into characters + elements
-    const traverse = (child: any): ReactNode[] => {
+    const traverse = (child: ReactNode): ReactNode[] => {
       if (typeof child === "string") {
-        return child.split("").map((char, i) => <span key={Math.random()}>{char}</span>);
+        return child.split("").map((char) => <span key={Math.random()}>{char}</span>);
       }
       if (Array.isArray(child)) {
         return child.flatMap(traverse);
       }
-      if (child?.type === "br") {
-        return [<br key={Math.random()} />];
-      }
-      if (child?.props?.children) {
-        // Recurse through nested children (like <span>…</span>)
-        const inner = traverse(child.props.children);
+      if (React.isValidElement(child)) {
+        const element = child as ReactElement<any, any>;
+        if (element.type === "br") {
+          return [<br key={Math.random()} />];
+        }
+        const inner = traverse(element.props.children);
         return [
-          // ✅ Use React.createElement so TypeScript sees this as valid ReactNode
-          React.createElement(child.type, { ...child.props, key: Math.random() }, inner),
+          React.createElement(element.type, { ...element.props, key: Math.random() }, inner),
         ];
       }
       return [];
