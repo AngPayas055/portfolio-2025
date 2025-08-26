@@ -31,7 +31,8 @@ export default function Typewriter({
       }
 
       if (React.isValidElement(child)) {
-        const element = child as ReactElement<Record<string, unknown>, string | JSXElementConstructor<any>>;
+        // ✅ Replace `any` with `unknown`
+        const element = child as ReactElement<Record<string, unknown>, string | JSXElementConstructor<unknown>>;
 
         if (element.type === "br") {
           const key = `${path}-br-${counter++}`;
@@ -40,7 +41,6 @@ export default function Typewriter({
 
         const inner = traverse(element.props.children as ReactNode, `${path}-el-${counter++}`);
         const key = `${path}-el-${counter++}`;
-
         const props = { ...(element.props as Record<string, unknown>), key };
 
         return [
