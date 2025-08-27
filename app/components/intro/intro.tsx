@@ -67,7 +67,7 @@ export default function Intro() {
             <DialogueBox>
               <div className="flex flex-col items-center space-y-4 w-full">
                 <Typewriter speed={25}>
-                  Awesome! Let's get to know you. What's your name and which character do you identify with? <br /><br />
+                  Awesome! Let&apos;s get to know you. What&apos;s your name and which character do you identify with? <br /><br />
                 </Typewriter>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full">
                   <label htmlFor="name" className="font-semibold">
