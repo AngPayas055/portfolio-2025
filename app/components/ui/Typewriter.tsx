@@ -63,7 +63,7 @@ export default function Typewriter({
     }, speed);
 
     return () => clearInterval(interval);
-  }, [children, speed]);
+  }, [speed]);
 
   return <p>{displayed}</p>;
 }
