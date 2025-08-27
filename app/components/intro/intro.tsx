@@ -19,10 +19,10 @@ export default function Intro() {
         {step === 0 && (
           <>
             <Image
-              src="/ash_retro.png"
+              src="/me.png"
               alt="Ash Avatar"
-              width={120}
-              height={120}
+              width={200}
+              height={200}
               className="pixelated mb-4"
               priority
             /> 
@@ -45,68 +45,87 @@ export default function Intro() {
         )}
 
         {step === 1 && (
-          <DialogueBox>
-            <div className="flex flex-col space-y-4 w-full">
-              {/* Instruction text */}
-              <Typewriter speed={25}>
-                Great! Before we begin, tell me your name and gender. <br /><br />
-              </Typewriter>
-
-              {/* Name input */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
-                <label htmlFor="name" className="font-semibold">
-                  Name:
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  placeholder="Your name"
-                  className="border border-gray-400 rounded px-2 py-1 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-500"
+          <div>
+            <div className="flex justify-center mb-4">
+              {gender && (
+                <Image
+                  src={
+                    gender === "male"
+                      ? "/boy.png"
+                      : gender === "female"
+                      ? "/girl.png"
+                      : "/other.png"
+                  }
+                  alt={gender}
+                  width={200}
+                  height={200}
+                  className="pixelated"
+                  priority
                 />
-              </div>
+              )}
+            </div> 
+            <DialogueBox>
+              <div className="flex flex-col items-center space-y-4 w-full">
+                <Typewriter speed={25}>
+                  Awesome! Let's get to know you. What's your name and which character do you identify with? <br /><br />
+                </Typewriter>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full">
+                  <label htmlFor="name" className="font-semibold">
+                    Name:
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    placeholder="Your name"
+                    className="border border-gray-400 rounded px-2 py-1 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                  <span className="font-semibold">Gender:</span>
 
-              {/* Gender radio buttons */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                <span className="font-semibold">Gender:</span>
-                <label className="flex items-center space-x-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="male"
-                    checked={gender === "male"}
-                    onChange={(e) => setGender(e.target.value)}
-                    className="accent-blue-500"
-                  />
-                  <span>Male</span>
-                </label>
-                <label className="flex items-center space-x-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="female"
-                    checked={gender === "female"}
-                    onChange={(e) => setGender(e.target.value)}
-                    className="accent-pink-500"
-                  />
-                  <span>Female</span>
-                </label>
-                <label className="flex items-center space-x-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="other"
-                    checked={gender === "other"}
-                    onChange={(e) => setGender(e.target.value)}
-                    className="accent-purple-500"
-                  />
-                  <span>Other</span>
-                </label>
+                  <label className="flex items-center space-x-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="male"
+                      checked={gender === "male"}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="accent-blue-500"
+                    />
+                    <span>Male</span>
+                  </label>
+
+                  <label className="flex items-center space-x-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="female"
+                      checked={gender === "female"}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="accent-pink-500"
+                    />
+                    <span>Female</span>
+                  </label>
+
+                  <label className="flex items-center space-x-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="other"
+                      checked={gender === "other"}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="accent-purple-500"
+                    />
+                    <span>Other</span>
+                  </label>
+                </div>
               </div>
-            </div>
-          </DialogueBox>
+            </DialogueBox>
+          </div>
         )}
+
       </div>
     </div>
   );
