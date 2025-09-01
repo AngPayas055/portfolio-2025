@@ -16,7 +16,7 @@ export default function Intro() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-[#f8f4d8] text-[#000000] min-h-screen">
+    <div className="flex flex-col items-center justify-center text-[#000000] min-h-screen">
       <div className="flex flex-col items-center justify-center">
         {step === 0 && (
           <>

@@ -80,7 +80,7 @@ export default function Typewriter({
       if (i >= flat.length) {
         clearInterval(interval);
         if (onComplete) {
-          onComplete(); // 👈 trigger callback when typing finishes
+          onComplete();
         }
       }
     }, speed);

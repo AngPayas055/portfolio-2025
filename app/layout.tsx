@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
 
 const pressStart = Press_Start_2P({
   weight: "400",
@@ -36,7 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">      
-      <body className={pressStart.className}>{children}</body>
+      <body className={pressStart.className}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
