@@ -1,5 +1,11 @@
 "use client";
-import React, { useState, useEffect, ReactNode, ReactElement, JSXElementConstructor } from "react";
+import React, {
+  useState,
+  useEffect,
+  ReactNode,
+  ReactElement,
+  JSXElementConstructor,
+} from "react";
 
 interface FlatChar {
   key: string;
@@ -9,9 +15,11 @@ interface FlatChar {
 export default function Typewriter({
   children,
   speed = 25,
+  onComplete,
 }: {
   children: ReactNode;
   speed?: number;
+  onComplete?: () => void;
 }) {
   const [displayed, setDisplayed] = useState<ReactNode[]>([]);
 
@@ -31,21 +39,31 @@ export default function Typewriter({
       }
 
       if (React.isValidElement(child)) {
-        const element = child as ReactElement<Record<string, unknown>, string | JSXElementConstructor<unknown>>;
+        const element = child as ReactElement<
+          Record<string, unknown>,
+          string | JSXElementConstructor<unknown>
+        >;
 
         if (element.type === "br") {
           const key = `${path}-br-${counter++}`;
           return [{ key, node: <br key={key} /> }];
         }
 
-        const inner = traverse(element.props.children as ReactNode, `${path}-el-${counter++}`);
+        const inner = traverse(
+          element.props.children as ReactNode,
+          `${path}-el-${counter++}`
+        );
         const key = `${path}-el-${counter++}`;
         const props = { ...(element.props as Record<string, unknown>), key };
 
         return [
           {
             key,
-            node: React.createElement(element.type, props, inner.map((c) => c.node)),
+            node: React.createElement(
+              element.type,
+              props,
+              inner.map((c) => c.node)
+            ),
           },
         ];
       }
@@ -59,11 +77,16 @@ export default function Typewriter({
     const interval = setInterval(() => {
       setDisplayed(flat.slice(0, i + 1).map((f) => f.node));
       i++;
-      if (i >= flat.length) clearInterval(interval);
+      if (i >= flat.length) {
+        clearInterval(interval);
+        if (onComplete) {
+          onComplete(); // 👈 trigger callback when typing finishes
+        }
+      }
     }, speed);
 
     return () => clearInterval(interval);
-  }, [speed]);
+  }, [children, speed, onComplete]);
 
   return <p>{displayed}</p>;
 }
