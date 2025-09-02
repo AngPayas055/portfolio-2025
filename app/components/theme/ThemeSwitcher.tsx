@@ -30,8 +30,6 @@ export const ThemeSwitcher = () => {
             className={`relative z-10 flex items-center justify-center gap-2 px-2 font-small text-xs transition-colors
               ${
                 isActive
-                  ? "text-[var(--color-bg)]"
-                  : "text-[var(--color-text)] bg-[var(--color-bg-dark)]"
               }
             `}
             style={{ flex: 1, minHeight: "40px" }}
