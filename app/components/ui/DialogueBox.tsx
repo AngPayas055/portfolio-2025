@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, ReactNode } from "react";
-import { useTheme } from "../theme/ThemeProvider";
 
 interface DialogueBoxProps {
   children: ReactNode;
@@ -12,9 +11,7 @@ export default function DialogueBox({ children, className = "" }: DialogueBoxPro
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      const interval = setInterval(() => {
-        setShowArrow((prev) => !prev);
-      }, 500);
+      const interval = setInterval(() => setShowArrow(prev => !prev), 500);
       return () => clearInterval(interval);
     }, 3000);
 
@@ -23,7 +20,12 @@ export default function DialogueBox({ children, className = "" }: DialogueBoxPro
 
   return (
     <div
-      className={`border-3 rounded-lg p-3 w-full max-w-md text-sm leading-relaxed relative pb-5 transition-colors duration-500 ${className}`}
+      className={`rounded-lg border p-3 w-full max-w-md text-sm leading-relaxed relative pb-5 transition-colors duration-500 ${className}`}
+      style={{
+        backgroundColor: "var(--color-bg-card)",
+        color: "var(--color-text)",
+        borderColor: "var(--color-primary)",
+      }}
     >
       {children}
       <span className="absolute bottom-2 right-3">{showArrow ? "▶" : ""}</span>

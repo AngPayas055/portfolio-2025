@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, CSSProperties } from "react";
 
 export type Theme = "light" | "dark" | "retro";
 
@@ -25,20 +25,37 @@ export const ThemeProvider = ({ children }: Props) => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={`transition-colors duration-500 ${getThemeClasses(theme)}`}>
+      <div className="transition-colors duration-500 min-h-screen" style={getThemeVariables(theme)}>
         {children}
       </div>
     </ThemeContext.Provider>
   );
 };
 
-const getThemeClasses = (theme: Theme) => {
+const getThemeVariables = (theme: Theme): CSSProperties => {
   switch (theme) {
     case "light":
-      return "bg-[#f8f4d8] text-[#000000] bg-card-[#ffffff]";
+      return {
+        "--color-bg": "#f8f4d8",
+        "--color-bg-card": "#ffffff",
+        "--color-text": "#000000",
+        "--color-primary": "#4a5568",
+      } as CSSProperties;
+
     case "dark":
-      return "bg-[#0d171d] text-[#eeeeee] bg-card-[#2f4150]";
+      return {
+        "--color-bg": "#0d171d",
+        "--color-bg-card": "#2f4150",
+        "--color-text": "#eeeeee",
+        "--color-primary": "#a855f7",
+      } as CSSProperties;
+
     case "retro":
-      return "bg-[#1c4587] text-[#f6dc62] bg-card-[#c9741a]";
+      return {
+        "--color-bg": "#1c4587",
+        "--color-bg-card": "#c9741a",
+        "--color-text": "#f6dc62",
+        "--color-primary": "#ffcc00",
+      } as CSSProperties;
   }
 };

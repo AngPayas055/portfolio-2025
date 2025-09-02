@@ -9,12 +9,12 @@ const themes: { name: string; value: Theme; icon: string }[] = [
 
 export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
-  const activeIndex = themes.findIndex((t) => t.value === theme);
+  const activeIndex = themes.findIndex(t => t.value === theme);
 
   return (
     <div className="relative inline-flex border border-[var(--color-primary)] rounded-lg overflow-hidden">
       <div
-        className="absolute top-0 bottom-0 bg-[var(--color-primary)] transition-all duration-300 rounded-md"
+        className="absolute top-0 bottom-0 transition-all duration-300 rounded-md"
         style={{
           left: `calc(${activeIndex} * 100% / ${themes.length})`,
           width: `calc(100% / ${themes.length})`,
@@ -27,17 +27,12 @@ export const ThemeSwitcher = () => {
           <button
             key={t.value}
             onClick={() => setTheme(t.value)}
-            className={`relative z-10 flex items-center justify-center gap-2 px-2 font-small text-xs transition-colors
-              ${
-                isActive
-              }
-            `}
+            className={`relative z-10 flex items-center justify-center gap-2 px-2 font-small text-xs transition-colors`}
             style={{ flex: 1, minHeight: "40px" }}
           >
             <span className="pb-1">{t.icon}</span>
             {isActive && <span>{t.name}</span>}
           </button>
-
         );
       })}
     </div>

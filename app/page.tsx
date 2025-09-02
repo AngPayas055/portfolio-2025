@@ -5,7 +5,7 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen bg-[var(--color-bg-dark)]">
+    <main className="min-h-screen transition-colors duration-500" style={{ backgroundColor: "var(--color-bg)" }}>
       <div className="flex justify-end p-2">
         <ThemeSwitcher />
       </div>
