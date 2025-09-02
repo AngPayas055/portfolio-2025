@@ -9,7 +9,7 @@ export default function Home() {
       <div className="flex justify-end p-2">
         <ThemeSwitcher />
       </div>
-      <div className="flex flex-col p-3 items-center justify-center bg-[var(--color-bg)] text-[var(--color-text)] space-y-6">
+      <div className="flex flex-col p-3 items-center justify-center space-y-6">
         <Intro />
       </div>
     </main>

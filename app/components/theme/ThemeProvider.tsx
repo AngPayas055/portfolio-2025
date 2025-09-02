@@ -35,10 +35,10 @@ export const ThemeProvider = ({ children }: Props) => {
 const getThemeClasses = (theme: Theme) => {
   switch (theme) {
     case "light":
-      return "bg-[#f8f4d8] text-[#000000]";
+      return "bg-[#f8f4d8] text-[#000000] bg-card-[#ffffff]";
     case "dark":
-      return "bg-[#0d171d] text-[#eeeeee]";
+      return "bg-[#0d171d] text-[#eeeeee] bg-card-[#2f4150]";
     case "retro":
-      return "bg-[#1c4587] text-[#f6dc62]";
+      return "bg-[#1c4587] text-[#f6dc62] bg-card-[#c9741a]";
   }
 };

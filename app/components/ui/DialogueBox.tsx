@@ -24,11 +24,7 @@ export default function DialogueBox({ children, className = "" }: DialogueBoxPro
 
   return (
     <div
-      className={`border-3 rounded-lg border-[var(--color-primary)] p-3 w-full max-w-md text-sm leading-relaxed relative pb-5 transition-colors duration-500 ${className}`}
-      style={{
-        backgroundColor: "var(--color-bg-dark)",
-        color: "var(--color-text)",
-      }}
+      className={`border-3 rounded-lg p-3 w-full max-w-md text-sm leading-relaxed relative pb-5 transition-colors duration-500 ${className}`}
     >
       {children}
       <span className="absolute bottom-2 right-3">{showArrow ? "▶" : ""}</span>
