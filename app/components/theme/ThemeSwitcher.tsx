@@ -27,7 +27,7 @@ export const ThemeSwitcher = () => {
           <button
             key={t.value}
             onClick={() => setTheme(t.value)}
-            className={`relative z-10 flex items-center justify-center gap-2 px-2 py-1 font-medium transition-colors
+            className={`relative z-10 flex items-center justify-center gap-2 px-2 font-small text-xs transition-colors
               ${
                 isActive
                   ? "text-[var(--color-bg)]"
@@ -36,7 +36,7 @@ export const ThemeSwitcher = () => {
             `}
             style={{ flex: 1, minHeight: "40px" }}
           >
-            <span className="pb-2">{t.icon}</span>
+            <span className="pb-1">{t.icon}</span>
             {isActive && <span>{t.name}</span>}
           </button>
 

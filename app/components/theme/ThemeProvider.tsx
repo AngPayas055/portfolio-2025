@@ -37,8 +37,8 @@ const getThemeClasses = (theme: Theme) => {
     case "light":
       return "bg-[#f8f4d8] text-[#000000]";
     case "dark":
-      return "bg-[#1a1a1a] text-[#eeeeee]";
+      return "bg-[#0d171d] text-[#eeeeee]";
     case "retro":
-      return "bg-[#0f3d0f] text-[#a2fca2]";
+      return "bg-[#1c4587] text-[#f6dc62]";
   }
 };
