@@ -8,7 +8,6 @@ interface DialogueBoxProps {
 }
 
 export default function DialogueBox({ children, className = "" }: DialogueBoxProps) {
-  const { theme } = useTheme();
   const [showArrow, setShowArrow] = useState(false);
 
   useEffect(() => {
