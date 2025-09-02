@@ -16,7 +16,7 @@ export default function Intro() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-[#000000] min-h-screen">
+    <div className="flex flex-col items-center justify-center text-[#000000]">
       <div className="flex flex-col items-center justify-center">
         {step === 0 && (
           <>
@@ -90,7 +90,7 @@ export default function Intro() {
 
                 {chooseVisitorDetails && (
                   <div className="w-full">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full mb-3">
                       <label htmlFor="name" className="font-semibold">
                         Name:
                       </label>

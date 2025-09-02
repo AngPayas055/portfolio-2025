@@ -5,9 +5,13 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-col min-h-screen p-3 items-center justify-center bg-[var(--color-bg)] text-[var(--color-text)] space-y-6">
-      <ThemeSwitcher />
-      <Intro />
+    <main className="min-h-screen bg-[var(--color-bg-dark)]">
+      <div className="flex justify-end p-2">
+        <ThemeSwitcher />
+      </div>
+      <div className="flex flex-col p-3 items-center justify-center bg-[var(--color-bg)] text-[var(--color-text)] space-y-6">
+        <Intro />
+      </div>
     </main>
   );
 }
