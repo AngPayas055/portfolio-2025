@@ -16,7 +16,7 @@ export default function Intro() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-[#000000]">
+    <div className="flex flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center">
         {step === 0 && (
           <>

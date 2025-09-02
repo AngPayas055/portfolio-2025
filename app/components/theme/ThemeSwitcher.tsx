@@ -34,7 +34,7 @@ export const ThemeSwitcher = () => {
                   : "text-[var(--color-text)] bg-[var(--color-bg-dark)]"
               }
             `}
-            style={{ flex: 1, minHeight: "40px" }} // keeps icons/text perfectly centered
+            style={{ flex: 1, minHeight: "40px" }}
           >
             <span className="pb-2">{t.icon}</span>
             {isActive && <span>{t.name}</span>}
