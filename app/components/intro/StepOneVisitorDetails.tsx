@@ -43,7 +43,7 @@ export default function Step1VisitorDetails({
             }
             alt={gender}
             width={200}
-            height={200}
+            height={250}
             className="pixelated"
             priority
             style={{ width: "200px", height: "250px" }}
