@@ -8,11 +8,12 @@ export default function Step0Intro({ onNext }: { onNext: () => void }) {
     <div className="flex flex-col items-center justify-center">
       <Image
         src="/me-smile.png"
-        alt="Ash Avatar"
+        alt="Avatar"
         width={200}
         height={200}
-        className="pixelated mb-4"
+        className="pixelated mb-3"
         priority
+        style={{ width: "200px", height: "200px" }}
       />
       <DialogueBox>
         <Typewriter speed={25}>

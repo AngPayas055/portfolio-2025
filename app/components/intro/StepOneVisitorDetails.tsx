@@ -20,7 +20,18 @@ export default function Step1VisitorDetails({
 
   return (
     <div>
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-4 min-h-[205px]">        
+        {!chooseVisitorDetails && (
+          <Image
+            src="/me-wink.png"
+            alt={gender}
+            width={200}
+            height={200}
+            className="pixelated"
+            priority
+            style={{ width: "200px", height: "200px" }}
+          />
+        )}
         {gender && (
           <Image
             src={
