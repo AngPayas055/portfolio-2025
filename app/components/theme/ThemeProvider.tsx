@@ -36,9 +36,9 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
   switch (theme) {
     case "light":
       return {
-        "--color-bg": "#f8f4d8",
-        "--color-bg-card": "#ffffff",
-        "--color-text": "#000000",
+        "--color-bg": "#ffffff",
+        "--color-bg-card": "#f2f2f2",
+        "--color-text": "#060606",
         "--color-primary": "#4a5568",
       } as CSSProperties;
 
