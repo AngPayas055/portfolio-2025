@@ -75,14 +75,13 @@ export default function Intro() {
                     onComplete={() => {
                       setTimeout(() => {
                         setChooseVisitorDetails(true);
-                        setVisitorTextFinished(true); // mark as finished
+                        setVisitorTextFinished(true);
                       }, 500);
                     }}
                   >
                     Awesome! Let&apos;s get to know you. What&apos;s your name and which character do you identify with? <br /><br />
                   </Typewriter>
                 ) : (
-                  // Show the text as plain HTML so it doesn’t animate again
                   <p>
                     Awesome! Let&apos;s get to know you. What&apos;s your name and which character do you identify with? <br /><br />
                   </p>
