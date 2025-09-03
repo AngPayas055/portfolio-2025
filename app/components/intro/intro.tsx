@@ -21,7 +21,7 @@ export default function Intro() {
         {step === 0 && (
           <>
             <Image
-              src="/me.png"
+              src="/me-smile.png"
               alt="Ash Avatar"
               width={200}
               height={200}

@@ -52,9 +52,9 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
 
     case "retro":
       return {
-        "--color-bg": "#1c4587",
-        "--color-bg-card": "#c9741a",
-        "--color-text": "#f6dc62",
+        "--color-bg": "#ea5337",
+        "--color-bg-card": "#1a4ec4",
+        "--color-text": "#e9cf22",
         "--color-primary": "#ffcc00",
       } as CSSProperties;
   }

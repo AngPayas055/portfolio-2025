@@ -24,7 +24,7 @@ export default function DialogueBox({ children, className = "" }: DialogueBoxPro
       style={{
         backgroundColor: "var(--color-bg-card)",
         color: "var(--color-text)",
-        borderColor: "var(--color-primary)",
+        borderColor: "var(--color-text)",
       }}
     >
       {children}

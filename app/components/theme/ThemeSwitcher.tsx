@@ -12,7 +12,7 @@ export const ThemeSwitcher = () => {
   const activeIndex = themes.findIndex(t => t.value === theme);
 
   return (
-    <div className="relative inline-flex border border-[var(--color-primary)] rounded-lg overflow-hidden">
+    <div className="relative inline-flex border border-[var(--color-text)] rounded-lg overflow-hidden">
       <div
         className="absolute top-0 bottom-0 transition-all duration-300 rounded-md"
         style={{
@@ -27,11 +27,11 @@ export const ThemeSwitcher = () => {
           <button
             key={t.value}
             onClick={() => setTheme(t.value)}
-            className={`relative z-10 flex items-center justify-center gap-2 px-2 font-small text-xs transition-colors`}
+            className={`relative z-10 flex items-center justify-center gap-2 px-1 font-small text-xs transition-colors`}
             style={{ flex: 1, minHeight: "40px" }}
           >
             <span className="pb-1">{t.icon}</span>
-            {isActive && <span>{t.name}</span>}
+            {isActive && <span className="text-[var(--color-text)]">{t.name}</span>}
           </button>
         );
       })}
