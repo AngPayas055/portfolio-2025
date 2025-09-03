@@ -46,6 +46,7 @@ export default function Step1VisitorDetails({
             height={200}
             className="pixelated"
             priority
+            style={{ width: "200px", height: "250px" }}
           />
         )}
       </div>
