@@ -20,7 +20,7 @@ export default function DialogueBox({ children, className = "" }: DialogueBoxPro
 
   return (
     <div
-      className={`rounded-lg border p-3 w-full max-w-md text-sm leading-relaxed relative pb-5 transition-colors duration-500 ${className}`}
+      className={`rounded-lg border p-3 w-full max-w-md text-sm leading-relaxed relative pb-5 transition-colors duration-500 shadow-lg ${className}`}
       style={{
         backgroundColor: "var(--color-bg-card)",
         color: "var(--color-text)",
@@ -30,5 +30,6 @@ export default function DialogueBox({ children, className = "" }: DialogueBoxPro
       {children}
       <span className="absolute bottom-2 right-3">{showArrow ? "▶" : ""}</span>
     </div>
+
   );
 }
