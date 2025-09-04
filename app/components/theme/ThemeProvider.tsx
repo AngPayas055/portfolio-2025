@@ -40,6 +40,7 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
         "--color-bg-card": "#f2f2f2",
         "--color-text": "#060606",
         "--color-primary": "#4a5568",
+        "--color-btn-primary": "#2563eb",
       } as CSSProperties;
 
     case "dark":
@@ -48,6 +49,7 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
         "--color-bg-card": "#2f4150",
         "--color-text": "#eeeeee",
         "--color-primary": "#a855f7",
+        "--color-btn-primary": "#3b82f6",
       } as CSSProperties;
 
     case "retro":
@@ -56,6 +58,8 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
         "--color-bg-card": "#1a4ec4",
         "--color-text": "#e9cf22",
         "--color-primary": "#ffcc00",
+        "--color-btn-primary": "#00c853",
       } as CSSProperties;
   }
 };
+

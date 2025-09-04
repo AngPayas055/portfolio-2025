@@ -9,18 +9,22 @@ export default function Step1VisitorDetails({
   setUserName,
   gender,
   setGender,
+  onNextStep, // 👈 add callback prop
 }: {
   userName: string;
   setUserName: (value: string) => void;
   gender: string;
   setGender: (value: string) => void;
+  onNextStep: () => void; // 👈 type definition
 }) {
   const [chooseVisitorDetails, setChooseVisitorDetails] = useState(false);
   const [visitorTextFinished, setVisitorTextFinished] = useState(false);
 
+  const isFormValid = userName.trim() !== "" && gender.trim() !== "";
+
   return (
     <div>
-      <div className="flex justify-center mb-4 min-h-[205px]">        
+      <div className="flex justify-center mb-4 min-h-[205px]">
         {!chooseVisitorDetails && (
           <Image
             src="/me-wink.png"
@@ -91,7 +95,7 @@ export default function Step1VisitorDetails({
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
                 <span className="font-semibold">Gender:</span>
 
                 <label className="flex items-center space-x-1 cursor-pointer">
@@ -130,6 +134,19 @@ export default function Step1VisitorDetails({
                   <span>Other</span>
                 </label>
               </div>
+
+              {isFormValid && (
+                <div className="flex justify-end">
+                  <button
+                    onClick={onNextStep}
+                    className="px-4 py-2 rounded-lg font-semibold transition 
+                              bg-[var(--color-btn-primary)] text-white 
+                              hover:opacity-90 active:scale-95 me-5"
+                  >
+                    Continue →
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>

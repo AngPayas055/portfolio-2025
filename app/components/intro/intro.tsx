@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Step0Intro from "./StepZeroIntro";
 import Step1VisitorDetails from "./StepOneVisitorDetails";
+import StepTwoWelcome from "./StepTwoWelcome";
 
 export default function Intro() {
   const [step, setStep] = useState(0);
@@ -17,6 +18,14 @@ export default function Intro() {
           setUserName={setUserName}
           gender={gender}
           setGender={setGender}
+          onNextStep={() => setStep(2)}
+        />
+      )}
+      {step === 2 && (
+        <StepTwoWelcome
+          userName={userName}
+          gender={gender}
+          onNextStep={() => setStep(3)}
         />
       )}
     </div>
