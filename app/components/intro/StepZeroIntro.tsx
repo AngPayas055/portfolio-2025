@@ -23,7 +23,7 @@ export default function Step0Intro({ onNext }: { onNext: () => void }) {
           But people also call me a <span className="font-bold">Developer 💻</span>. <br /><br />
           This is my portfolio. <br />
           <span
-            className="text-green-600 cursor-pointer hover:underline"
+            className="text-green-600 cursor-pointer hover:underline animate-pulse"
             onClick={onNext}
           >
             Press START
