@@ -139,9 +139,7 @@ export default function Step1VisitorDetails({
                 <div className="flex justify-center">
                   <button
                     onClick={onNextStep}
-                    className="px-4 py-2 rounded-lg font-semibold transition 
-                              bg-[var(--color-btn-primary)] text-white 
-                              hover:opacity-90 active:scale-95 me-5"
+                    className="btn-primary me-5"
                   >
                     Continue →
                   </button>

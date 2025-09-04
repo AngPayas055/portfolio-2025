@@ -65,7 +65,7 @@ export default function StepTwoWelcome({
           {showButton && (
             <button
               onClick={onNextStep}
-              className="px-4 py-2 rounded-lg font-semibold transition bg-[var(--color-btn-primary)] text-white hover:opacity-90 active:scale-95"
+              className="btn-primary me-5"
             >
               Yes! Let&apos;s Go →
             </button>
