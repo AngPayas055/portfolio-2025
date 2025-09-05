@@ -47,18 +47,24 @@ export default function StepTwoWelcome({
                 setVisitorTextFinished(true);
               }, 500);
             }}>
-            <span className="font-bold">{userName}</span>... 🌟  
-            Welcome to this world of creativity and code!  
-            Here, you&apos;ll discover the projects, skills, and ideas I&apos;ve brought to life.  
-            Ready to explore my portfolio? ⚡
+            <span className="font-bold text-[var(--color-primary)]">{userName}</span>... 🌟  
+            Welcome to this <span className="text-[var(--color-btn-primary)] font-semibold">world of creativity</span> and
+            <span className="text-[var(--color-text)] px-1 rounded"> code!</span>  
+            Here, you&apos;ll discover the <span className="text-[var(--color-btn-primary)]">projects</span>,  
+            <span className="text-[var(--color-btn-primary)]">skills</span>, and   
+            <span className="text-[var(--color-btn-primary)]"> ideas</span> I&apos;ve brought to life.  
+            Ready to explore my <span className="text-[var(--color-btn-primary)] font-bold">portfolio</span>? ⚡
           </Typewriter>
 
           ): (
             <p>
-              <span className="font-bold">{userName}</span>... 🌟  
-              Welcome to this world of creativity and code!  
-              Here, you&apos;ll discover the projects, skills, and ideas I&apos;ve brought to life.  
-              Ready to explore my portfolio? ⚡
+              <span className="font-bold text-[var(--color-primary)]">{userName}</span>... 🌟  
+              Welcome to this <span className="text-[var(--color-btn-primary)] font-semibold">world of creativity</span> and
+              <span className="text-[var(--color-text)] px-1 rounded"> code!</span>  
+              Here, you&apos;ll discover the <span className="text-[var(--color-btn-primary)]">projects</span>,  
+              <span className="text-[var(--color-btn-primary)]">skills</span>, and   
+              <span className="text-[var(--color-btn-primary)]"> ideas</span> I&apos;ve brought to life.  
+              Ready to explore my <span className="text-[var(--color-btn-primary)] font-bold">portfolio</span>? ⚡
             </p>
           )}
 

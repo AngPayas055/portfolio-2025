@@ -57,7 +57,7 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
         "--color-bg": "#ea5337",
         "--color-bg-card": "#1a4ec4",
         "--color-text": "#e9cf22",
-        "--color-primary": "#ffcc00",
+        "--color-primary": "#ff0080", 
         "--color-btn-primary": "#00c853",
       } as CSSProperties;
   }
