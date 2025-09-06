@@ -3,6 +3,7 @@ import { useState } from "react";
 import Step0Intro from "./StepZeroIntro";
 import Step1VisitorDetails from "./StepOneVisitorDetails";
 import StepTwoWelcome from "./StepTwoWelcome";
+import StepThreeTheme from "./StepThreeTheme";
 
 export default function Intro() {
   const [step, setStep] = useState(0);
@@ -26,6 +27,12 @@ export default function Intro() {
           userName={userName}
           gender={gender}
           onNextStep={() => setStep(3)}
+        />
+      )}
+      {step === 3 && (
+        <StepThreeTheme 
+          gender={gender} 
+          onNextStep={() => setStep(4)} 
         />
       )}
     </div>
