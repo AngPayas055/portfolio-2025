@@ -1,15 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function LoadingScreen() {
-  const [loading, setLoading] = useState(true);
-
+export default function LoadingScreen({ onFinish }: { onFinish: () => void }) {
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+    const timer = setTimeout(() => onFinish(), 3000);
     return () => clearTimeout(timer);
-  }, []);
-
-  if (!loading) return null;
+  }, [onFinish]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[var(--color-bg)] to-[var(--color-primary)]">
