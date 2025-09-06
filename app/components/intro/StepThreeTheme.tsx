@@ -47,7 +47,6 @@ export default function StepThreeTheme({
                 <span className="font-semibold">Light</span>,{" "}
                 <span className="font-semibold">Dark</span>, and{" "}
                 <span className="font-semibold">Retro</span> themes.  
-                (Think of it like choosing the style of your Pokédex!)
               </Typewriter>
             ) : (
               <p className="text-[var(--color-text)] text-lg leading-relaxed">
@@ -58,7 +57,6 @@ export default function StepThreeTheme({
                 <span className="font-semibold">Light</span>,{" "}
                 <span className="font-semibold">Dark</span>, and{" "}
                 <span className="font-semibold">Retro</span> themes.  
-                (Think of it like choosing the style of your Pokédex!)
               </p>
             )}
           </div>
