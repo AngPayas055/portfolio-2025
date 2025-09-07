@@ -49,7 +49,7 @@ export default function StepThreeTheme({
                 <span className="font-semibold">Retro</span> themes.  
               </Typewriter>
             ) : (
-              <p className="text-[var(--color-text)] text-lg leading-relaxed">
+              <p>
                 Hold it right there!  
                 Before we continue on this grand adventure…  
                 there’s something important you should know!  
