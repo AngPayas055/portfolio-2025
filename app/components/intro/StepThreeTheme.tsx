@@ -97,7 +97,7 @@ export default function StepThreeTheme({
                 )}
                 {step === "done" && (
                   <div>
-                    All set! Give it a try yourself using the switcher below.
+                    All set! You can try it yourself using the switcher above or below.
                   </div>
                 )}
               </>
@@ -107,7 +107,10 @@ export default function StepThreeTheme({
       </div>
 
       <div className="flex flex-col items-center space-y-3">
-        <ThemeSwitcher />
+        
+        {step !== "intro" && (
+          <ThemeSwitcher />
+        )}
         {step === "done" && (
           <button
             onClick={onNextStep}
