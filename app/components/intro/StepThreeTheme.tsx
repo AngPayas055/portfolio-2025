@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Typewriter from "../ui/Typewriter";
 import DialogueBox from "../ui/DialogueBox";
 import { ThemeSwitcher } from "../theme/ThemeSwitcher";
+import { useTheme } from "../theme/ThemeProvider";
 
 export default function StepThreeTheme({
   gender,
@@ -12,8 +13,27 @@ export default function StepThreeTheme({
   gender: string;
   onNextStep: () => void;
 }) {
-  const [textFinished, setTextFinished] = useState(false);
-  const [showButton, setShowButton] = useState(false);
+  const { setTheme } = useTheme();
+  const [step, setStep] = useState<"intro" | "dark" | "retro" | "light" | "done">("intro");
+
+  useEffect(() => {
+    if (step === "intro") return;
+
+    let timeout: NodeJS.Timeout;
+
+    if (step === "dark") {
+      setTheme("dark");
+      timeout = setTimeout(() => setStep("retro"), 2500);
+    } else if (step === "retro") {
+      setTheme("retro");
+      timeout = setTimeout(() => setStep("light"), 2500);
+    } else if (step === "light") {
+      setTheme("light");
+      timeout = setTimeout(() => setStep("done"), 2500);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [step, setTheme]);
 
   return (
     <div className="flex flex-col items-center justify-center space-y-6">
@@ -27,44 +47,41 @@ export default function StepThreeTheme({
           priority
           style={{ width: "200px", height: "200px" }}
         />
-
-        <DialogueBox>
-          <div className="flex flex-col items-center space-y-4">
-            {!textFinished ? (
+        <div>
+          <DialogueBox>
+            {step === "intro" ? (
               <Typewriter
                 speed={25}
                 onComplete={() => {
-                  setTimeout(() => {
-                    setShowButton(true);
-                    setTextFinished(true);
-                  }, 500);
+                  setTimeout(() => setStep("dark"), 500);
                 }}
               >
-                Hold it right there!  
-                Before we continue on this grand adventure…  
-                there’s something important you should know!  
+                Hold it right there!
+                <br />
+                Before we continue on this grand adventure…
+                <br />
+                there’s something important you should know!
+                <br />
                 You can change how this world looks — try switching between{" "}
                 <span className="font-semibold">Light</span>,{" "}
                 <span className="font-semibold">Dark</span>, and{" "}
-                <span className="font-semibold">Retro</span> themes.  
+                <span className="font-semibold">Retro</span> themes.
               </Typewriter>
             ) : (
-              <p>
-                Hold it right there!  
-                Before we continue on this grand adventure…  
-                there’s something important you should know!  
-                You can change how this world looks — try switching between{" "}
-                <span className="font-semibold">Light</span>,{" "}
-                <span className="font-semibold">Dark</span>, and{" "}
-                <span className="font-semibold">Retro</span> themes.  
-              </p>
+              <>
+                {step === "dark" && <Typewriter speed={25}>This is the Dark Theme</Typewriter>}
+                {step === "retro" && <Typewriter speed={25}>Now, this is the Retro Theme 🎮</Typewriter>}
+                {step === "light" && <Typewriter speed={25}>And we’re back to Light Theme ☀️</Typewriter>}
+                {step === "done" && <p>All set! Try switching themes yourself below.</p>}
+              </>
             )}
-          </div>
-        </DialogueBox>
+          </DialogueBox>
+        </div>
       </div>
+
       <div className="flex flex-col items-center space-y-3">
         <ThemeSwitcher />
-        {showButton && (
+        {step === "done" && (
           <button
             onClick={onNextStep}
             className="mt-2 px-6 py-2 rounded-xl font-bold bg-[var(--color-btn-primary)] text-[var(--color-bg)] shadow-lg hover:scale-105 transition"
