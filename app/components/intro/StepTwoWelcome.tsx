@@ -48,7 +48,7 @@ export default function StepTwoWelcome({
               }, 500);
             }}>
             <span className="font-bold text-[var(--color-primary)]">{userName}</span>... 🌟  
-            Welcome to this <span className="text-[var(--color-btn-primary)] font-semibold">world of creativity</span> and
+            Welcome to this <span className="text-[var(--color-btn-primary)]">world of creativity</span> and
             <span className="text-[var(--color-text)] px-1 rounded"> code!</span>  
             Here, you&apos;ll discover the <span className="text-[var(--color-btn-primary)]">projects</span>,  
             <span className="text-[var(--color-btn-primary)]">skills</span>, and   
@@ -59,7 +59,7 @@ export default function StepTwoWelcome({
           ): (
             <p>
               <span className="font-bold text-[var(--color-primary)]">{userName}</span>... 🌟  
-              Welcome to this <span className="text-[var(--color-btn-primary)] font-semibold">world of creativity</span> and
+              Welcome to this <span className="text-[var(--color-btn-primary)]">world of creativity</span> and
               <span className="text-[var(--color-text)] px-1 rounded"> code!</span>  
               Here, you&apos;ll discover the <span className="text-[var(--color-btn-primary)]">projects</span>,  
               <span className="text-[var(--color-btn-primary)]">skills</span>, and   
