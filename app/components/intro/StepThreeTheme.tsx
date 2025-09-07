@@ -48,6 +48,18 @@ export default function StepThreeTheme({
           style={{ width: "200px", height: "200px" }}
         />
         <div>
+          
+          {step !== "intro" && step !== "done" && (
+            <div className="mb-3 rounded-lg border text-[var(--color-text)] border-[var(--color-text)] bg-[var(--color-bg-card)] p-3 w-full max-w-md text-sm leading-relaxed relative pb-5 transition-colors duration-500 shadow-lg">
+              Hold it right there!
+              <br />
+              Before we set off on this grand adventure…
+              <br />
+              there’s something important you should know!
+              <br />
+              You can change how this world looks
+            </div>
+          )}
           <DialogueBox>
             {step === "intro" ? (
               <Typewriter
@@ -58,21 +70,36 @@ export default function StepThreeTheme({
               >
                 Hold it right there!
                 <br />
-                Before we continue on this grand adventure…
+                Before we set off on this grand adventure…
                 <br />
                 there’s something important you should know!
                 <br />
-                You can change how this world looks — try switching between{" "}
-                <span className="font-semibold">Light</span>,{" "}
-                <span className="font-semibold">Dark</span>, and{" "}
-                <span className="font-semibold">Retro</span> themes.
+                You can change how this world looks
               </Typewriter>
             ) : (
               <>
-                {step === "dark" && <Typewriter speed={25}>This is the Dark Theme</Typewriter>}
-                {step === "retro" && <Typewriter speed={25}>Now, this is the Retro Theme 🎮</Typewriter>}
-                {step === "light" && <Typewriter speed={25}>And we’re back to Light Theme ☀️</Typewriter>}
-                {step === "done" && <p>All set! Try switching themes yourself below.</p>}
+                {step === "dark" && (
+                  <div>                    
+                    <Typewriter speed={25}>
+                      This is the <span className="font-semibold">Dark Theme</span> 🌙
+                    </Typewriter>
+                  </div>
+                )}
+                {step === "retro" && (
+                  <Typewriter speed={25}>
+                    Now, feast your eyes on the <span className="font-semibold">Retro Theme</span> 🎮
+                  </Typewriter>
+                )}
+                {step === "light" && (
+                  <Typewriter speed={25}>
+                    And finally… we’re back to the <span className="font-semibold">Light Theme</span> ☀️
+                  </Typewriter>
+                )}
+                {step === "done" && (
+                  <div>
+                    All set! Give it a try yourself using the switcher below.
+                  </div>
+                )}
               </>
             )}
           </DialogueBox>
