@@ -1,8 +1,10 @@
 "use client";
+import About from "./sections/about";
+
 export default function Sections() {
   return (
-    <div>
-      <h2>sections</h2>
+    <div className="pt-20 w-7/12 ps-5">
+      <About></About>
     </div>
   );
 }

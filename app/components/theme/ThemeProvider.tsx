@@ -39,6 +39,7 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
         "--color-bg": "#ffffff",
         "--color-bg-card": "#f2f2f2",
         "--color-text": "#060606",
+        "--color-text-highlight": "#e7000b",
         "--color-primary": "#4a5568",
         "--color-btn-primary": "#2563eb",
       } as CSSProperties;
@@ -48,6 +49,7 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
         "--color-bg": "#0d171d",
         "--color-bg-card": "#2f4150",
         "--color-text": "#eeeeee",
+        "--color-text-highlight": "#a855f7",
         "--color-primary": "#a855f7",
         "--color-btn-primary": "#3b82f6",
       } as CSSProperties;
@@ -57,8 +59,9 @@ const getThemeVariables = (theme: Theme): CSSProperties => {
         "--color-bg": "#ea5337",
         "--color-bg-card": "#1a4ec4",
         "--color-text": "#e9cf22",
-        "--color-primary": "#ff0080", 
-        "--color-btn-primary": "#00c853",
+        "--color-text-highlight": "#1a4ec4",
+        "--color-primary": "#ffcc00",   // Classic retro mustard (recommended)
+        "--color-btn-primary": "#00bfa6", // complementary teal for buttons / accents
       } as CSSProperties;
   }
 };

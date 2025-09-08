@@ -12,3 +12,7 @@
 .btn-primary:active {
   transform: scale(0.95);
 }
+#about strong {
+  color: var(--color-text-highlight);
+  font-weight: 600;
+}
