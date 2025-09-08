@@ -17,22 +17,22 @@ export default function Navigation() {
       <div>
         <h1 className="text-3xl font-bold text-[var(--color-text)]">JMendiola</h1>
         <h3 className="text-lg text-[var(--color-text)] py-3">Full Stack Developer</h3>
-        <p className="mt-2 text-sm text-[var(--color-text)]/90 mb-5">{bio}</p>
+        <p className="mt-2 text-xs text-[var(--color-text)]/90 mb-5">{bio}</p>
         <ThemeSwitcher />
       </div>
       <div>
         <ul>
-          <li className=" text-[var(--color-text)]">ABOUT</li>
-          <li className=" text-[var(--color-text)]">EXPERIENCE</li>
-          <li className=" text-[var(--color-text)]">PROJECTS</li>
-          <li className=" text-[var(--color-text)]">CONTACT</li>
+          <li className="text-xs text-[var(--color-text)]">ABOUT</li>
+          <li className="text-xs text-[var(--color-text)]">EXPERIENCE</li>
+          <li className="text-xs text-[var(--color-text)]">PROJECTS</li>
+          <li className="text-xs text-[var(--color-text)]">CONTACT</li>
         </ul>
       </div>
       <div>
         <ul className="flex gap-4">
-          <li className=" text-[var(--color-text)]">GH</li>
-          <li className=" text-[var(--color-text)]">LI</li>
-          <li className=" text-[var(--color-text)]">RE</li>
+          <li className="text-xs text-[var(--color-text)]">GH</li>
+          <li className="text-xs text-[var(--color-text)]">LI</li>
+          <li className="text-xs text-[var(--color-text)]">RE</li>
         </ul>
       </div>
     </div>
