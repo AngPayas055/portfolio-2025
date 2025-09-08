@@ -5,16 +5,19 @@ import Typewriter from "../ui/Typewriter";
 import DialogueBox from "../ui/DialogueBox";
 import { ThemeSwitcher } from "../theme/ThemeSwitcher";
 import { useTheme } from "../theme/ThemeProvider";
+import { useRouter } from "next/navigation";
 
 export default function StepThreeTheme({
   gender,
-  onNextStep,
 }: {
   gender: string;
-  onNextStep: () => void;
 }) {
   const { setTheme } = useTheme();
   const [step, setStep] = useState<"intro" | "dark" | "retro" | "light" | "done">("intro");
+  const router = useRouter();
+  const handleContinue = () => {
+    router.push("/hero");
+  };
 
   useEffect(() => {
     if (step === "intro") return;
@@ -113,7 +116,7 @@ export default function StepThreeTheme({
         )}
         {step === "done" && (
           <button
-            onClick={onNextStep}
+            onClick={handleContinue}
             className="mt-2 px-6 py-2 rounded-xl font-bold bg-[var(--color-btn-primary)] text-[var(--color-bg)] shadow-lg hover:scale-105 transition"
           >
             Continue →

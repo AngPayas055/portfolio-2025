@@ -32,7 +32,6 @@ export default function Intro() {
       {step === 3 && (
         <StepThreeTheme 
           gender={gender} 
-          onNextStep={() => setStep(4)} 
         />
       )}
     </div>
