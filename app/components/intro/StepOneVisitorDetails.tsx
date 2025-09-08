@@ -46,17 +46,17 @@ export default function Step1VisitorDetails({
                 : "/other.png"
             }
             alt={gender}
-            width={200}
-            height={250}
+            width={180}
+            height={200}
             className="pixelated"
             priority
-            style={{ width: "200px", height: "250px" }}
+            style={{ width: "180px", height: "200px" }}
           />
         )}
       </div>
 
       <DialogueBox>
-        <div className="flex flex-col items-center space-y-4 w-full">
+        <div className="flex flex-col items-center w-full">
           {!visitorTextFinished ? (
             <Typewriter
               speed={25}
@@ -81,9 +81,9 @@ export default function Step1VisitorDetails({
 
           {chooseVisitorDetails && (
             <div className="w-full">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full mb-3">
-                <label htmlFor="name" className="font-semibold">
-                  Name:
+              <div className="flex sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full mb-3">
+                <label htmlFor="name" className="font-semibold min-w-[95px]">
+                  Name
                 </label>
                 <input
                   id="name"
@@ -95,44 +95,45 @@ export default function Step1VisitorDetails({
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
-                <span className="font-semibold">Gender:</span>
+              <div className="flex sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+                <span className="font-semibold min-w-[95px]">Gender</span>
+                <div>                  
+                  <label className="flex items-center space-x-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="male"
+                      checked={gender === "male"}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="accent-blue-500"
+                    />
+                    <span>Male</span>
+                  </label>
 
-                <label className="flex items-center space-x-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="male"
-                    checked={gender === "male"}
-                    onChange={(e) => setGender(e.target.value)}
-                    className="accent-blue-500"
-                  />
-                  <span>Male</span>
-                </label>
+                  <label className="flex items-center space-x-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="female"
+                      checked={gender === "female"}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="accent-pink-500"
+                    />
+                    <span>Female</span>
+                  </label>
 
-                <label className="flex items-center space-x-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="female"
-                    checked={gender === "female"}
-                    onChange={(e) => setGender(e.target.value)}
-                    className="accent-pink-500"
-                  />
-                  <span>Female</span>
-                </label>
-
-                <label className="flex items-center space-x-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="other"
-                    checked={gender === "other"}
-                    onChange={(e) => setGender(e.target.value)}
-                    className="accent-purple-500"
-                  />
-                  <span>Other</span>
-                </label>
+                  <label className="flex items-center space-x-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="other"
+                      checked={gender === "other"}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="accent-purple-500"
+                    />
+                    <span>Other</span>
+                  </label>
+                </div>
               </div>
 
               {isFormValid && (
