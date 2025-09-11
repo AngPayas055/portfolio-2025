@@ -3,7 +3,7 @@ import About from "./sections/about";
 
 export default function Sections() {
   return (
-    <div className="pt-20 w-7/12 ps-5">
+    <div className="pt-20 md:w-7/12 ">
       <About></About>
     </div>
   );

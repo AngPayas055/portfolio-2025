@@ -13,7 +13,7 @@ export default function Navigation() {
     "Writes clean code, drinks too much coffee, and fixes bugs with duct tape (software edition).";
 
   return (
-    <div className="w-5/12 h-screen ps-3 pe-5 py-20 flex flex-col justify-between sticky top-0">
+    <div className="md:w-5/12 h-screen py-20 flex flex-col justify-between md:sticky top-0">
       <div>
         <h1 className="text-3xl font-bold text-[var(--color-text)]">JMendiola</h1>
         <h3 className="text-lg text-[var(--color-text)] py-3">Full Stack Developer</h3>
