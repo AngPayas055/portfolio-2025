@@ -4,7 +4,7 @@ export const experiences = [
     role: "Fullstack Dev",
     company: "Draftal",
     description:
-      "As the sole Full Stack JavaScript / TypeScript Developer at Draftal, I am responsible for the entire development lifecycle—from planning and building features to deploying and maintaining applications. I work with Next.js and Node.js to deliver scalable solutions, manage integrations with third-party services such as Xero, Airtable, and Google Workspace, and handle deployments. On the frontend, I use Tailwind CSS and Ant Design to create responsive, polished user experiences that align with business needs.",
+      "As the sole Full Stack Developer at Draftal, I build and maintain both client-side and admin-side web applications using Next.js, Node.js, and MongoDB. I handle feature development, deployments, and integrations with third-party services like Xero, Airtable, and Google Workspace, while ensuring responsive UI with Tailwind CSS and Ant Design.",
     tech: [
       "JavaScript",
       "TypeScript",
