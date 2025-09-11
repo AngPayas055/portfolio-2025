@@ -13,26 +13,26 @@ export default function Navigation() {
     "Writes clean code, drinks too much coffee, and fixes bugs with duct tape (software edition).";
 
   return (
-    <div className="md:w-5/12 h-screen py-20 flex flex-col justify-between md:sticky top-0">
-      <div>
-        <h1 className="text-3xl font-bold text-[var(--color-text)]">JMendiola</h1>
-        <h3 className="text-lg text-[var(--color-text)] py-3">Full Stack Developer</h3>
-        <p className="mt-2 text-xs text-[var(--color-text)]/90 mb-5">{bio}</p>
+    <div className="md:w-5/12 h-screen py-20 flex flex-col justify-between md:sticky top-0 text-[10px]">
+      <div className="max-w-sm">
+        <h1 className="text-2xl font-bold text-[var(--color-text)]">JMendiola</h1>
+        <h3 className="text-md text-[var(--color-text)] py-3">Full Stack Developer</h3>
+        <p className="mt-2 text-[var(--color-text)]/90 mb-5">{bio}</p>
         <ThemeSwitcher />
       </div>
       <div>
         <ul>
-          <li className="text-xs text-[var(--color-text)]">ABOUT</li>
-          <li className="text-xs text-[var(--color-text)]">EXPERIENCE</li>
-          <li className="text-xs text-[var(--color-text)]">PROJECTS</li>
-          <li className="text-xs text-[var(--color-text)]">CONTACT</li>
+          <li className="text-[var(--color-text)]">ABOUT</li>
+          <li className="text-[var(--color-text)]">EXPERIENCE</li>
+          <li className="text-[var(--color-text)]">PROJECTS</li>
+          <li className="text-[var(--color-text)]">CONTACT</li>
         </ul>
       </div>
       <div>
         <ul className="flex gap-4">
-          <li className="text-xs text-[var(--color-text)]">GH</li>
-          <li className="text-xs text-[var(--color-text)]">LI</li>
-          <li className="text-xs text-[var(--color-text)]">RE</li>
+          <li className="text-[var(--color-text)]">GH</li>
+          <li className="text-[var(--color-text)]">LI</li>
+          <li className="text-[var(--color-text)]">RE</li>
         </ul>
       </div>
     </div>
