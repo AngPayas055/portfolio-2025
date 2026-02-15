@@ -32,7 +32,16 @@ export default function Navigation() {
         <ul className="flex gap-4">
           <li className="text-[var(--color-text)]">GH</li>
           <li className="text-[var(--color-text)]">LI</li>
-          <li className="text-[var(--color-text)]">RE</li>
+          <li className="text-[var(--color-text)]">
+            <a
+              href="https://drive.google.com/file/d/1Xxppwkex0hanGr3gMvJjC0UXJCtmfXp0/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-text)] hover:underline"
+            >
+              RE
+            </a>
+          </li>
         </ul>
       </div>
     </div>
