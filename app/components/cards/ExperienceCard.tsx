@@ -17,12 +17,7 @@ export function ExperienceCard({
 }: ExperienceProps) {
   return (
     <div
-      className="border-2 p-4 rounded-xl shadow-lg text-[10px]"
-      style={{
-        backgroundColor: "var(--color-bg-card)",
-        color: "var(--color-text)",
-        borderColor: "var(--color-primary)",
-      }}
+      className="text-[var(--color-text)] border-2 border-transparent p-4 rounded-xl shadow-lg text-[10px] transition-colors duration-300 hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-card)]"
     >
       <h2 className="font-bold">
         {role} • {company}
