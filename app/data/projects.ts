@@ -1,5 +1,20 @@
 export const projects = [
   {
+    title: "SakaySafe",
+    link: "https://sakaysafe.vercel.app",
+    image: "/projects/sakay.gif",
+    description:
+      "SakaySafe is a ride-sharing platform I built to solve commuting challenges, especially at night when public transport is scarce. The app monitors passenger numbers and helps drivers manage routes efficiently. Future plans include adding map integration and real-time location tracking as funding allows.",
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Ant Design",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
     title: "SmartCompose",
     link: "https://smart-compose.vercel.app/home",
     image: "/projects/demo.gif",
@@ -32,7 +47,7 @@ export const projects = [
   },
   {
     title: "JMendiola v2",
-    link: "https://jmendiola.vercel.app/landing",
+    link: "https://jmendiola-git-main-jhonmendiolas-projects.vercel.app",
     image: "/projects/v3.gif",
     description:
       "An old portfolio site built with NextJs",

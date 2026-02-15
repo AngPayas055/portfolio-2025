@@ -32,7 +32,7 @@ export function ProjectCard({
           src={image}
           alt={title}
           fill
-          className="object-contain bg-black"
+          className="object-contain"
         />
       </div>
       <h2 className="font-bold flex items-center justify-between">
